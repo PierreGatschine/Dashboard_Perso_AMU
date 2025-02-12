@@ -1,0 +1,76 @@
+/* Exemple de règle simple de reset */
+
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+
+/* Si vous auto-hébergez la police */
+@font-face {
+    font-family: 'Atkinson Hyperlegible Mono';
+    src: url('fonts/AtkinsonHyperlegibleMono.woff2') format('woff2'),
+         url('fonts/AtkinsonHyperlegibleMono.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Surcharge pour tous les éléments h1 (st.title crée un h1) */
+h1 {
+    font-family: 'Atkinson Hyperlegible Mono', monospace !important;
+    font-size: 1.5em;
+    text-transform: uppercase;  
+    color:rgb(108, 105, 105) !important;
+}
+
+/* Optionnel : appliquer à tous les éléments */
+body, p, h2, h3, h4, h5, h6 {
+    font-family: 'Atkinson Hyperlegible Mono', monospace !important;
+}
+
+
+/* main.css */
+
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color:rgb(227, 206, 43);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.card {
+    background-color:rgba(249, 249, 249, 0.92);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    width: 250px;
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0px 0px 10px #aaa;
+}
+
+.card img {
+    max-height: 50px;
+    margin-bottom: 10px;
+    
+}
+
+.card a {
+    text-decoration: none;
+    color: #333;
+}
+
+.emoji-icon {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
