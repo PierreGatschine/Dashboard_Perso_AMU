@@ -1,12 +1,20 @@
-import ton_script
-import os
-import sys
 
-# Ajoute le dossier contenant main.py au début de sys.path
-current_dir = os.path.dirname(os.path.realpath(__file__))
-if current_dir not in sys.path:
-    sys.path.insert(0, current_dir)
+
+import streamlit as st
+from wiki import wiki_app  # Import de la fonction wiki_app depuis wiki.py
+from ton_script import dashboard_app  # Import de la fonction dashboard_app depuis ton_script.py
+
+
+def main():
+    # Affiche le dashboard en haut de la page
+    dashboard_app()
+
+    # Séparation visuelle
+    st.markdown("<hr>", unsafe_allow_html=True)
+
+    # Appel de la fonctionnalité wiki (définie dans wiki.py)
+    wiki_app()
 
 
 if __name__ == "__main__":
-    ton_script.main()
+    main()

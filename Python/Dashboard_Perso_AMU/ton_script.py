@@ -33,7 +33,7 @@ def get_ico_svg(lien):
     return mapping.get(key, f'<div class="emoji-icon">{lien["icone"]}</div>')
 
 
-def main():
+def dashboard_app():
     # Configuration de la page
     st.set_page_config(
         page_title="Dashboard outils de gestion de parc", layout="wide")
