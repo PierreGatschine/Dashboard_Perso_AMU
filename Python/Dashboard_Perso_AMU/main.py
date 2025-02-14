@@ -1,18 +1,19 @@
-
-
 import streamlit as st
-from wiki import wiki_app  # Import de la fonction wiki_app depuis wiki.py
-from ton_script import dashboard_app  # Import de la fonction dashboard_app depuis ton_script.py
+from wiki import wiki_app
+from outlook_calendar import calendar_app  # si vous l'avez renommé
+# Assurez-vous que ton_script.py ne contient pas d'appel à set_page_config()
+from ton_script import dashboard_app
+
+# Appeler set_page_config() en tout premier, avant tout autre appel Streamlit
+st.set_page_config(
+    page_title="Dashboard Outils de Gestion de Parc", layout="wide")
 
 
 def main():
-    # Affiche le dashboard en haut de la page
     dashboard_app()
-
-    # Séparation visuelle
     st.markdown("<hr>", unsafe_allow_html=True)
-
-    # Appel de la fonctionnalité wiki (définie dans wiki.py)
+    calendar_app()
+    st.markdown("<hr>", unsafe_allow_html=True)
     wiki_app()
 
 

@@ -78,7 +78,7 @@ def wiki_app():
             if new_title and new_content:
                 add_solution(conn, new_title, new_content)
                 st.success("Solution ajoutée avec succès !")
-                st.experimental_rerun()  # Rafraîchit l'interface pour afficher la nouvelle solution
+                #st.experimental_rerun()  # Rafraîchit l'interface pour afficher la nouvelle solution
             else:
                 st.error("Veuillez renseigner le titre et le contenu.")
 
@@ -103,7 +103,7 @@ def wiki_app():
                 if st.button("Supprimer", key=f"delete_{solution[0]}"):
                     delete_solution(conn, solution[0])
                     st.success("Solution supprimée")
-                    st.experimental_rerun()
+                    #st.experimental_rerun()
 
             # Si une solution est sélectionnée pour modification, afficher un formulaire d'édition
             if "edit_id" in st.session_state and st.session_state["edit_id"] == solution[0]:
@@ -122,6 +122,6 @@ def wiki_app():
                         st.session_state.pop("edit_id", None)
                         st.session_state.pop("edit_title", None)
                         st.session_state.pop("edit_content", None)
-                        st.experimental_rerun()
+                        #st.experimental_rerun()
     else:
         st.info("Aucune solution déposée pour le moment.")

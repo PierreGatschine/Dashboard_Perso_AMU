@@ -35,19 +35,15 @@ def get_ico_svg(lien):
 
 def dashboard_app():
     # Configuration de la page
-    st.set_page_config(
-        page_title="Dashboard outils de gestion de parc", layout="wide")
+    ##   page_title="Dashboard outils de gestion de parc", layout="wide")
     css_content = load_css("main.css")
 
     # Injection du CSS dans la page
     st.markdown(f"<style>{css_content}</style>", unsafe_allow_html=True)
 
     # Affichage du titre avec du HTML personnalisé pour forcer la police
-    st.markdown("""
-        <h1 style="padding: 10px;">
-            Dashboard outils de gestion de parc
-        </h1>
-    """, unsafe_allow_html=True)
+    st.header("Dashboard outils de gestion de parc")
+    st.subheader("Liens vers les outils de gestion")
 
     # Liste des liens avec icônes
     liens = [
@@ -76,6 +72,16 @@ def dashboard_app():
             "nom": "Grafana",
             "url": "https://dashboard-it.univ-amu.fr/d/ddn2tfvvim1ogf/facilit-amu-pour-les-equipes?orgId=1&refresh=1m&var-Equipe=46&var-Gestionnaire=19478&var-Zone=$__all&from=now-2y&to=now&timezone=browser",
             "icone": GRAFANA # Utilisation de "AMU" pour afficher FACILIT_AMU
+        },
+        {
+            "nom": "Courrier",
+            "url": "https://mail.univ-amu.fr/owa/#path=/mail",
+            "icone": GRAFANA  # Utilisation de "AMU" pour afficher FACILIT_AMU
+        },
+        {
+            "nom": "Calendrier",
+            "url": "https://mail.univ-amu.fr/owa/#path=/calendar/view/Week",
+            "icone": GRAFANA  # Utilisation de "AMU" pour afficher FACILIT_AMU
         }
     ]
 
@@ -110,5 +116,3 @@ def dashboard_app():
     components.html(full_html, height=600, scrolling=True)
 
 
-if __name__ == "__main__":
-    main()
