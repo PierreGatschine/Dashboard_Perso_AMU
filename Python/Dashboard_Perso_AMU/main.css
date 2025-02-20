@@ -22,7 +22,7 @@ h1 {
     font-family: 'Atkinson Hyperlegible Mono', monospace !important;
     font-size: 1.5em;
     text-transform: uppercase;  
-    color:rgb(108, 105, 105) !important;
+    color:rgb(62, 62, 62) !important;
 }
 
 /* Optionnel : appliquer à tous les éléments */
@@ -41,6 +41,10 @@ body, p, h2, h3, h4, h5, h6 {
     /*background-color:rgb(227, 206, 43);*/
     padding: calc(-1px + 1rem);
     border-radius: 10px;
+}
+
+.h2 {
+    paddng: 0px;
 }
 
 .card {
@@ -68,7 +72,7 @@ body, p, h2, h3, h4, h5, h6 {
 
 .card a {
     text-decoration: none;
-     color: rgb(250, 250, 250);
+     color: rgb(97, 97, 97);
 }
 
 .emoji-icon {

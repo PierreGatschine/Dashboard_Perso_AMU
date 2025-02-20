@@ -4,10 +4,16 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 
+def load_css(file_name):
+    """Charge et retourne le contenu du fichier CSS."""
+    with open(file_name, encoding="utf-8") as f:
+        return f.read()
 
 def calendar_app():
-    st.header("Calendrier Outlook Adaptatif")
-
+    # Chargement du CSS
+    css = load_css("main.css")
+    st.header("MyCalendrier")
+    cards_html = '<div class="dashboard">'
     # Remplacez par l'URL publique de votre calendrier Outlook
     calendar_url = "https://mail.univ-amu.fr/owa/calendar/388bbaa1c28c444f8326fe28b5e5429b@univ-amu.fr/0518d4f644d54aeda26cef55796ccbf12180997605482452348/calendar.html"
 
@@ -17,8 +23,10 @@ def calendar_app():
       .responsive-iframe {{
         position: relative;
         width: 100%;
+        height: 125px;
         padding-top: 56.25%; /* 16:9 ratio */
         overflow: hidden;
+         border: 0.05px solid #ddd;
         border-radius: 10px;
       }}
       .responsive-iframe iframe {{

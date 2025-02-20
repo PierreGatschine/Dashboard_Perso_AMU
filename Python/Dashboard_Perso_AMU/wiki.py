@@ -63,13 +63,13 @@ def wiki_app():
     """
     Affiche l'interface du wiki avec les fonctionnalités CRUD.
     """
-    st.header("Wiki de Solutions de Correction de Bug Informatique (CRUD)")
+    st.header("MyWiki")
 
     # Initialisation ou récupération de la base de données
     conn = init_db()
 
     # --- Création d'une nouvelle solution ---
-    st.subheader("Ajouter une nouvelle solution")
+    #st.subheader("")
     with st.form("create_solution"):
         new_title = st.text_input("Titre de la solution", key="new_title")
         new_content = st.text_area("Contenu de la solution", key="new_content")

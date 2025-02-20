@@ -39,11 +39,11 @@ def dashboard_app():
     css_content = load_css("main.css")
 
     # Injection du CSS dans la page
-    st.markdown(f"<style>{css_content}</style>", unsafe_allow_html=True)
+    #st.markdown(f"<style>{css_content}</style>", unsafe_allow_html=True)
 
     # Affichage du titre avec du HTML personnalisé pour forcer la police
-    st.header("Dashboard outils de gestion de parc")
-    st.subheader("Liens vers les outils de gestion")
+    st.header("MyDashboard")
+    #st.subheader("Liens vers les outils de gestion")
 
     # Liste des liens avec icônes
     liens = [
@@ -99,20 +99,32 @@ def dashboard_app():
         '''
     cards_html += '</div>'
 
-    # Assemblage d'une page HTML complète en incluant le CSS inline
+
     full_html = f'''
     <html>
       <head>
         <meta charset="utf-8">
         <style>{css_content}</style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
       </head>
       <body>
         {cards_html}
+        <script>
+          // Rendre le conteneur de cartes sortable
+          var el = document.querySelector('.dashboard');
+          Sortable.create(el, {{
+            animation: 150,
+            onEnd: function (evt) {{
+              console.log("Carte déplacée : nouvelle position", evt.newIndex);
+              // Vous pouvez ajouter ici une logique pour sauvegarder l'ordre si besoin.
+            }}
+          }});
+        </script>
       </body>
     </html>
     '''
 
     # Affichage du contenu HTML via un composant Streamlit
-    components.html(full_html, height=600, scrolling=True)
+    components.html(full_html, height=500, scrolling=True)
 
 
