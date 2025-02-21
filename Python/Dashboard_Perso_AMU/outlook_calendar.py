@@ -23,10 +23,10 @@ def calendar_app():
       .responsive-iframe {{
         position: relative;
         width: 100%;
-        height: 125px;
+        height: 65px;
         padding-top: 56.25%; /* 16:9 ratio */
         overflow: hidden;
-         border: 0.05px solid #ddd;
+        border: 0.05px solid #ddd;
         border-radius: 10px;
       }}
       .responsive-iframe iframe {{
@@ -51,4 +51,4 @@ def calendar_app():
     </div>
     """
 
-    components.html(iframe_code, height=600, scrolling=True)
+    components.html(iframe_code, height=500, scrolling=True)
